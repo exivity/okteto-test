@@ -3,7 +3,8 @@ set -e
 
 name=$1
 namespace=$2
-log_level=$3
+timeout=$3
+log_level=$4
 
 params=""
 if [ ! -z $namespace ]; then
@@ -14,6 +15,10 @@ if [ ! -z "$OKTETO_CA_CERT" ]; then
    echo "Custom certificate is provided"
    echo "$OKTETO_CA_CERT" > /usr/local/share/ca-certificates/okteto_ca_cert.crt
    update-ca-certificates
+fi
+
+if [ ! -z $timeout ]; then
+params="${params} --timeout=$timeout"
 fi
 
 if [ ! -z "$log_level" ]; then
