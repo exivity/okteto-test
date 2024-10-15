@@ -32,5 +32,5 @@ if [ "${RUNNER_DEBUG}" = "1" ]; then
 fi
 
 
-echo running: okteto test $log_level --name "${name}" ${params} --wait
-okteto test $log_level --name "${name}" ${params} --wait
+echo running: okteto test $log_level --name "${name}" ${params}
+okteto test $log_level --name "${name}" ${params}
