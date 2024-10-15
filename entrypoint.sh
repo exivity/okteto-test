@@ -28,4 +28,4 @@ fi
 
 
 echo running: okteto pipeline destroy $log_level --name "${name}" ${params} --wait
-okteto pipeline destroy $log_level --name "${name}" ${params} --wait
+okteto test $log_level --name "${name}" ${params} --wait
